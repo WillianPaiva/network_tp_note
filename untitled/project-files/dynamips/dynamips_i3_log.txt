@@ -1,0 +1,24 @@
+Dec 02 14:32:49.551 HYPERVISOR: Release 0.2.14-amd64/Linux (tag 2014092320)
+Dec 02 14:32:49.551 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49509.
+Dec 02 14:32:49.558 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 14:32:49.558 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 02 14:32:49.558 HYPERVISOR: exec_cmd: hypervisor working_dir /net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips 
+Dec 02 14:32:49.558 GENERAL: working_dir=/net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips
+Dec 02 14:32:49.558 HYPERVISOR: exec_cmd: ethsw create SW1 
+Dec 02 14:34:31.261 HYPERVISOR: exec_cmd: nio create_udp udp-4fc1bb48-4cb9-4416-9ace-13aa724eac88 10002 127.0.0.1 10003 
+Dec 02 14:34:31.266 HYPERVISOR: exec_cmd: ethsw add_nio SW1 udp-4fc1bb48-4cb9-4416-9ace-13aa724eac88 
+Dec 02 14:34:31.286 HYPERVISOR: exec_cmd: ethsw set_access_port SW1 udp-4fc1bb48-4cb9-4416-9ace-13aa724eac88 1 
+Dec 02 14:34:57.395 HYPERVISOR: exec_cmd: nio create_udp udp-f169bacd-13a5-4b0f-b29c-55853402d7ee 10011 127.0.0.1 10010 
+Dec 02 14:34:57.395 HYPERVISOR: exec_cmd: ethsw add_nio SW1 udp-f169bacd-13a5-4b0f-b29c-55853402d7ee 
+Dec 02 14:34:57.407 HYPERVISOR: exec_cmd: ethsw set_access_port SW1 udp-f169bacd-13a5-4b0f-b29c-55853402d7ee 1 
+Dec 02 14:40:50.063 HYPERVISOR: exec_cmd: ethsw remove_nio SW1 udp-4fc1bb48-4cb9-4416-9ace-13aa724eac88 
+Dec 02 14:40:50.079 HYPERVISOR: exec_cmd: nio delete udp-4fc1bb48-4cb9-4416-9ace-13aa724eac88 
+Dec 02 14:41:14.029 HYPERVISOR: exec_cmd: nio create_udp udp-8f16225f-e4db-4361-a95c-f20561a5851f 10002 127.0.0.1 10003 
+Dec 02 14:41:14.035 HYPERVISOR: exec_cmd: ethsw add_nio SW1 udp-8f16225f-e4db-4361-a95c-f20561a5851f 
+Dec 02 14:41:14.036 HYPERVISOR: exec_cmd: ethsw set_access_port SW1 udp-8f16225f-e4db-4361-a95c-f20561a5851f 1 
+Dec 02 15:48:52.095 HYPERVISOR: exec_cmd: nio bind_filter udp-8f16225f-e4db-4361-a95c-f20561a5851f 2 capture 
+Dec 02 15:48:52.096 HYPERVISOR: exec_cmd: nio setup_filter udp-8f16225f-e4db-4361-a95c-f20561a5851f 2 en10mb /net/cremi/adanzer/GNS3/projects/untitled/project-files/captures/SW1_1_to_VT_FastEthernet1-0.pcap 
+Dec 02 16:07:16.559 HYPERVISOR: exec_cmd: ethsw delete SW1 
+Dec 02 16:07:16.598 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 16:07:16.725 HYPERVISOR: Stopped.
+Dec 02 16:07:16.725 GENERAL: reset done.

@@ -1,0 +1,36 @@
+Dec 02 14:33:07.503 HYPERVISOR: Release 0.2.14-amd64/Linux (tag 2014092320)
+Dec 02 14:33:07.503 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59424.
+Dec 02 14:33:07.511 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 14:33:07.511 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 02 14:33:07.511 HYPERVISOR: exec_cmd: hypervisor working_dir /net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips 
+Dec 02 14:33:07.511 GENERAL: working_dir=/net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips
+Dec 02 14:33:07.511 HYPERVISOR: exec_cmd: vm create R6 6 c3600 
+Dec 02 14:33:07.515 VM: VM R6 created.
+Dec 02 14:33:07.516 HYPERVISOR: exec_cmd: vm set_con_tcp_port R6 2006 
+Dec 02 14:33:07.516 HYPERVISOR: exec_cmd: c3600 get_mac_addr R6 
+Dec 02 14:33:07.516 HYPERVISOR: exec_cmd: c3600 set_chassis R6 3660 
+Dec 02 14:33:07.516 HYPERVISOR: exec_cmd: vm set_nvram R6 256 
+Dec 02 14:33:07.517 HYPERVISOR: exec_cmd: vm set_ios R6 /net/cremi/adanzer/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
+Dec 02 14:33:07.517 HYPERVISOR: exec_cmd: vm set_ram R6 192 
+Dec 02 14:33:07.521 HYPERVISOR: exec_cmd: vm set_config R6 configs/i6_startup-config.cfg 
+Dec 02 14:33:07.522 HYPERVISOR: exec_cmd: vm set_ghost_status R6 2 
+Dec 02 14:33:07.522 HYPERVISOR: exec_cmd: vm set_ghost_file R6 c3660-ik9o3s-mz.124-13b.image-192.ghost 
+Dec 02 14:35:03.493 HYPERVISOR: exec_cmd: nio create_udp udp-f1cb3016-1b04-43da-a12d-c6f69511713a 10016 127.0.0.1 10017 
+Dec 02 14:35:03.511 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R6 0 0 udp-f1cb3016-1b04-43da-a12d-c6f69511713a 
+Dec 02 14:35:03.511 HYPERVISOR: exec_cmd: vm get_status R6 
+Dec 02 15:56:11.710 HYPERVISOR: exec_cmd: vm get_status R6 
+Dec 02 15:56:11.711 HYPERVISOR: exec_cmd: vm start R6 
+Dec 02 16:05:21.679 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:05:23.605 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:05:27.363 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:05:45.119 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:05:48.391 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:07:16.910 HYPERVISOR: exec_cmd: vm get_status R6 
+Dec 02 16:07:16.911 HYPERVISOR: exec_cmd: vm stop R6 
+Dec 02 16:07:16.936 VM: VM R6 shutdown.
+Dec 02 16:07:16.936 HYPERVISOR: exec_cmd: vm extract_config R6 
+Dec 02 16:07:16.939 HYPERVISOR: exec_cmd: vm delete R6 
+Dec 02 16:07:16.939 VM: VM R6 destroyed.
+Dec 02 16:07:29.750 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 16:07:30.216 HYPERVISOR: Stopped.
+Dec 02 16:07:30.216 GENERAL: reset done.

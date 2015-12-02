@@ -1,0 +1,22 @@
+Dec 02 14:32:55.094 HYPERVISOR: Release 0.2.14-amd64/Linux (tag 2014092320)
+Dec 02 14:32:55.094 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 49865.
+Dec 02 14:32:55.101 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 14:32:55.101 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 02 14:32:55.101 HYPERVISOR: exec_cmd: hypervisor working_dir /net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips 
+Dec 02 14:32:55.101 GENERAL: working_dir=/net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips
+Dec 02 14:32:55.102 HYPERVISOR: exec_cmd: ethsw create SW4 
+Dec 02 14:34:41.318 HYPERVISOR: exec_cmd: nio create_udp udp-e9ef1d95-7bac-44e7-8638-cd98827a6a18 10008 127.0.0.1 10009 
+Dec 02 14:34:41.322 HYPERVISOR: exec_cmd: ethsw add_nio SW4 udp-e9ef1d95-7bac-44e7-8638-cd98827a6a18 
+Dec 02 14:34:41.333 HYPERVISOR: exec_cmd: ethsw set_access_port SW4 udp-e9ef1d95-7bac-44e7-8638-cd98827a6a18 1 
+Dec 02 14:35:03.511 HYPERVISOR: exec_cmd: nio create_udp udp-f54982a6-bdd6-49c4-91cc-d676219ef50e 10017 127.0.0.1 10016 
+Dec 02 14:35:03.511 HYPERVISOR: exec_cmd: ethsw add_nio SW4 udp-f54982a6-bdd6-49c4-91cc-d676219ef50e 
+Dec 02 14:35:03.517 HYPERVISOR: exec_cmd: ethsw set_access_port SW4 udp-f54982a6-bdd6-49c4-91cc-d676219ef50e 1 
+Dec 02 14:40:55.327 HYPERVISOR: exec_cmd: ethsw remove_nio SW4 udp-e9ef1d95-7bac-44e7-8638-cd98827a6a18 
+Dec 02 14:40:55.345 HYPERVISOR: exec_cmd: nio delete udp-e9ef1d95-7bac-44e7-8638-cd98827a6a18 
+Dec 02 14:41:23.765 HYPERVISOR: exec_cmd: nio create_udp udp-1e9c409e-63e9-4496-931a-95269ef684f0 10008 127.0.0.1 10009 
+Dec 02 14:41:23.771 HYPERVISOR: exec_cmd: ethsw add_nio SW4 udp-1e9c409e-63e9-4496-931a-95269ef684f0 
+Dec 02 14:41:23.780 HYPERVISOR: exec_cmd: ethsw set_access_port SW4 udp-1e9c409e-63e9-4496-931a-95269ef684f0 1 
+Dec 02 16:07:16.559 HYPERVISOR: exec_cmd: ethsw delete SW4 
+Dec 02 16:07:16.594 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 16:07:16.884 HYPERVISOR: Stopped.
+Dec 02 16:07:16.884 GENERAL: reset done.
