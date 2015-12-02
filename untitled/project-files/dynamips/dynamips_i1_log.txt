@@ -1,0 +1,75 @@
+Dec 02 14:32:30.164 HYPERVISOR: Release 0.2.14-amd64/Linux (tag 2014092320)
+Dec 02 14:32:30.164 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 38674.
+Dec 02 14:32:30.170 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 02 14:32:30.170 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 02 14:32:30.170 HYPERVISOR: exec_cmd: hypervisor working_dir /net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips 
+Dec 02 14:32:30.170 GENERAL: working_dir=/net/cremi/adanzer/GNS3/projects/untitled/project-files/dynamips
+Dec 02 14:32:30.170 HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+Dec 02 14:32:30.173 VM: VM R1 created.
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 2001 
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 02 14:32:30.173 HYPERVISOR: exec_cmd: vm slot_remove_binding R1 0 0 
+Dec 02 14:32:30.174 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 02 14:32:30.174 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-2FE 
+Dec 02 14:32:30.174 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Dec 02 14:32:30.174 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Dec 02 14:32:30.175 HYPERVISOR: exec_cmd: vm set_ios R1 /net/cremi/adanzer/GNS3/images/IOS/c7200-jk9s-mz.124-13b.image 
+Dec 02 14:32:30.176 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Dec 02 14:32:30.179 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Dec 02 14:32:30.179 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Dec 02 14:32:30.182 VM: VM Ghost created.
+Dec 02 14:32:30.182 HYPERVISOR: exec_cmd: vm set_ios Ghost /net/cremi/adanzer/GNS3/images/IOS/c7200-jk9s-mz.124-13b.image 
+Dec 02 14:32:30.182 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 02 14:32:30.182 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost c7200-jk9s-mz.124-13b.image-512.ghost 
+Dec 02 14:32:30.182 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Dec 02 14:32:30.183 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 02 14:32:30.221 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 02 14:32:32.657 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 02 14:32:32.657 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 02 14:32:33.535 VM: VM Ghost shutdown.
+Dec 02 14:32:33.536 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 02 14:32:33.536 VM: VM Ghost destroyed.
+Dec 02 14:32:33.542 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+Dec 02 14:32:33.543 HYPERVISOR: exec_cmd: vm set_ghost_file R1 c7200-jk9s-mz.124-13b.image-512.ghost 
+Dec 02 14:33:37.291 HYPERVISOR: exec_cmd: vm rename R1 RT 
+Dec 02 14:34:18.729 HYPERVISOR: exec_cmd: nio create_udp udp-4368a7e4-d456-4e72-ae12-abc553a33655 10001 127.0.0.1 10000 
+Dec 02 14:34:18.730 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RT 0 0 udp-4368a7e4-d456-4e72-ae12-abc553a33655 
+Dec 02 14:34:18.730 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 14:51:52.647 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 14:51:52.647 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding RT 0 0 
+Dec 02 14:51:52.648 HYPERVISOR: exec_cmd: nio delete udp-4368a7e4-d456-4e72-ae12-abc553a33655 
+Dec 02 14:52:02.069 HYPERVISOR: exec_cmd: nio create_udp udp-2957308e-9f20-4e7f-b08e-dd392a72800f 10000 127.0.0.1 10001 
+Dec 02 14:52:02.074 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RT 0 0 udp-2957308e-9f20-4e7f-b08e-dd392a72800f 
+Dec 02 14:52:02.074 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 14:54:21.565 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 14:54:21.567 HYPERVISOR: exec_cmd: vm start RT 
+Dec 02 15:49:11.242 HYPERVISOR: exec_cmd: nio bind_filter udp-2957308e-9f20-4e7f-b08e-dd392a72800f 2 capture 
+Dec 02 15:49:11.242 HYPERVISOR: exec_cmd: nio setup_filter udp-2957308e-9f20-4e7f-b08e-dd392a72800f 2 en10mb /net/cremi/adanzer/GNS3/projects/untitled/project-files/captures/RT_FastEthernet0-0_to_VT_FastEthernet1-4.pcap 
+Dec 02 15:59:14.498 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 15:59:14.498 HYPERVISOR: exec_cmd: vm slot_disable_nio RT 0 0 
+Dec 02 15:59:14.503 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding RT 0 0 
+Dec 02 15:59:14.503 HYPERVISOR: exec_cmd: nio unbind_filter udp-2957308e-9f20-4e7f-b08e-dd392a72800f 2 
+Dec 02 15:59:14.503 HYPERVISOR: exec_cmd: nio delete udp-2957308e-9f20-4e7f-b08e-dd392a72800f 
+Dec 02 15:59:20.665 HYPERVISOR: exec_cmd: nio create_udp udp-20aea9a9-bc7b-4f7e-bc0d-3f18d4f8154e 10001 127.0.0.1 10000 
+Dec 02 15:59:20.666 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RT 0 0 udp-20aea9a9-bc7b-4f7e-bc0d-3f18d4f8154e 
+Dec 02 15:59:20.666 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 15:59:20.667 HYPERVISOR: exec_cmd: vm slot_enable_nio RT 0 0 
+Dec 02 15:59:58.023 HYPERVISOR: exec_cmd: nio bind_filter udp-20aea9a9-bc7b-4f7e-bc0d-3f18d4f8154e 2 capture 
+Dec 02 15:59:58.023 HYPERVISOR: exec_cmd: nio setup_filter udp-20aea9a9-bc7b-4f7e-bc0d-3f18d4f8154e 2 en10mb /net/cremi/adanzer/GNS3/projects/untitled/project-files/captures/RT_FastEthernet0-0_to_VT_FastEthernet1-2.pcap 
+Dec 02 16:05:21.633 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:05:23.603 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:05:27.361 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:05:45.116 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:05:48.388 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:07:16.910 HYPERVISOR: exec_cmd: vm get_status RT 
+Dec 02 16:07:16.911 HYPERVISOR: exec_cmd: vm stop RT 
+Dec 02 16:07:16.971 VM: VM RT shutdown.
+Dec 02 16:07:16.971 HYPERVISOR: exec_cmd: vm extract_config RT 
+Dec 02 16:07:16.992 HYPERVISOR: exec_cmd: vm delete RT 
+Dec 02 16:07:16.992 VM: VM RT destroyed.
+Dec 02 16:07:29.749 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 02 16:07:29.881 HYPERVISOR: Stopped.
+Dec 02 16:07:29.881 GENERAL: reset done.
