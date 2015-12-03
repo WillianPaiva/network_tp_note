@@ -12,7 +12,10 @@ et tous ceux qui sont égaux à 0 sont utilisés pour identifier le réseau
 
 ** question 2 :
 
-Il s'agit d'un réseau de classe B
+Il s'agit d'un réseau de classe B.
+L'avantage de cette classe est qu'on a beacoup des bits pour la part host d'une
+adresse. Les inconviences sont que le déplacement est fix et on a une grande
+probabilité de gaspillage d'adresses si on a pas besoin de tous les adresses.
 
 
 ** question 3
@@ -560,6 +563,10 @@ Arguments contre :
 
 ** question 4
 
+La topologie n'est pas très flexible. Ajouter des nouvelles équipe est un
+problème, parce-que la plupart de ports de V1 sont déjà occupés.
+
+
 ** question 5
 
 Les VLANs sont plus adaptés lorsqu'il s'agit d'isoler chaque équipe.
@@ -668,6 +675,21 @@ exit
 
 
 ** question 13
+première Génération:
+- VLANs de niveau 1: Groupe de segments
+- VLANs de niveau 2: Groupe d'adresses Mac
+
+deuxième Génération:
+- VLANs de niveau 3: Sous-réseau protocolaire (IP)
+
+Au prémier niveau, chaque port appartient à un utilisateur. La sécurité entre
+VLANs est maximale ici, parce-que aucun paquet ne quitte son domaine.
+Un VLAN comme ça est facilement contrôlable. Au deuxième nivea, un filtrage
+par adresse MAC est requis, ce qui a un impact sur les performances. De plus,
+l'échange des tables d'adresses des VLANs entre les commutateur signigie un
+overhead à l'administration.
+Le nivuea 3 nécessite des protocoles routables, mais pas une administration
+manuelle.
 
 
 
@@ -840,6 +862,12 @@ no shutdown
 exit
 
 #+END_EXAMPLE
+
+
+** question 23
+Le protocole STP n'est pas vraiment utile dans ce cas, parce-que la topologie
+est relativement simple. Le fort de STP est une solution au problème de bouclage,
+mais ça ne pas nécessaire a notre réseau.
 
 
 
