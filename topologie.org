@@ -689,7 +689,9 @@ par adresse MAC est requis, ce qui a un impact sur les performances. De plus,
 l'échange des tables d'adresses des VLANs entre les commutateur signigie un
 overhead à l'administration.
 Le nivuea 3 nécessite des protocoles routables, mais pas une administration
-manuelle.
+manuelle. L'avantage de 802.1Q est une supporte de la priorisation. En outre,
+un marquage implicite des trames est possible, de sorte qu'aucune étiquette
+est nécessaire dans la trame.
 
 
 
