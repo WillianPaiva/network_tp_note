@@ -1,0 +1,39 @@
+Dec 03 10:41:29.961 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Dec 03 10:41:29.961 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 55888.
+Dec 03 10:41:29.974 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 03 10:41:29.974 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 03 10:41:29.974 HYPERVISOR: exec_cmd: hypervisor working_dir /home/willian/GNS3/projects/tp/project-files/dynamips 
+Dec 03 10:41:29.974 GENERAL: working_dir=/home/willian/GNS3/projects/tp/project-files/dynamips
+Dec 03 10:41:29.975 HYPERVISOR: exec_cmd: vm create PC1 3 c3600 
+Dec 03 10:41:29.975 VM: VM PC1 created.
+Dec 03 10:41:29.978 HYPERVISOR: exec_cmd: vm set_con_tcp_port PC1 2003 
+Dec 03 10:41:29.978 HYPERVISOR: exec_cmd: c3600 get_mac_addr PC1 
+Dec 03 10:41:29.978 HYPERVISOR: exec_cmd: c3600 set_chassis PC1 3660 
+Dec 03 10:41:29.978 HYPERVISOR: exec_cmd: vm set_ram PC1 192 
+Dec 03 10:41:29.979 HYPERVISOR: exec_cmd: vm set_ios PC1 /home/willian/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
+Dec 03 10:41:29.979 HYPERVISOR: exec_cmd: c3600 set_mac_addr PC1 cc03.1876.0000 
+Dec 03 10:41:29.979 HYPERVISOR: exec_cmd: vm get_status PC1 
+Dec 03 10:41:29.980 HYPERVISOR: exec_cmd: vm set_idle_pc PC1 0x606366c4 
+Dec 03 10:41:29.980 HYPERVISOR: exec_cmd: vm set_nvram PC1 256 
+Dec 03 10:41:29.980 HYPERVISOR: exec_cmd: vm set_config PC1 configs/i3_startup-config.cfg 
+Dec 03 10:41:29.981 HYPERVISOR: exec_cmd: vm create Ghost 0 c3600 
+Dec 03 10:41:29.981 VM: VM Ghost created.
+Dec 03 10:41:29.981 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/willian/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
+Dec 03 10:41:29.981 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 03 10:41:29.982 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost c3660-ik9o3s-mz.124-13b.image-192.ghost 
+Dec 03 10:41:29.982 HYPERVISOR: exec_cmd: vm set_ram Ghost 192 
+Dec 03 10:41:29.982 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 03 10:41:29.982 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 03 10:41:30.036 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 03 10:41:30.036 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 03 10:41:30.245 VM: VM Ghost shutdown.
+Dec 03 10:41:30.246 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 03 10:41:30.246 VM: VM Ghost destroyed.
+Dec 03 10:41:30.247 HYPERVISOR: exec_cmd: vm set_ghost_status PC1 2 
+Dec 03 10:41:30.248 HYPERVISOR: exec_cmd: vm set_ghost_file PC1 c3660-ik9o3s-mz.124-13b.image-192.ghost 
+Dec 03 10:41:30.581 HYPERVISOR: exec_cmd: nio create_udp udp-e7240202-e419-421f-9944-c30464385ca6 10001 127.0.0.1 10000 
+Dec 03 10:41:30.582 HYPERVISOR: exec_cmd: vm slot_add_nio_binding PC1 0 0 udp-e7240202-e419-421f-9944-c30464385ca6 
+Dec 03 10:41:30.583 HYPERVISOR: exec_cmd: vm get_status PC1 
+Dec 03 10:42:06.586 HYPERVISOR: exec_cmd: vm get_status PC1 
+Dec 03 10:42:06.590 HYPERVISOR: exec_cmd: vm start PC1 
+Dec 03 11:10:39.903 HYPERVISOR: exec_cmd: vm extract_config PC1 

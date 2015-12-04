@@ -1,0 +1,26 @@
+Dec 03 10:41:30.075 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Dec 03 10:41:30.075 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 34493.
+Dec 03 10:41:30.085 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 03 10:41:30.085 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 03 10:41:30.085 HYPERVISOR: exec_cmd: hypervisor working_dir /home/willian/GNS3/projects/tp/project-files/dynamips 
+Dec 03 10:41:30.085 GENERAL: working_dir=/home/willian/GNS3/projects/tp/project-files/dynamips
+Dec 03 10:41:30.085 HYPERVISOR: exec_cmd: vm create PC4 6 c3600 
+Dec 03 10:41:30.085 VM: VM PC4 created.
+Dec 03 10:41:30.086 HYPERVISOR: exec_cmd: vm set_con_tcp_port PC4 2006 
+Dec 03 10:41:30.086 HYPERVISOR: exec_cmd: c3600 get_mac_addr PC4 
+Dec 03 10:41:30.086 HYPERVISOR: exec_cmd: c3600 set_chassis PC4 3660 
+Dec 03 10:41:30.086 HYPERVISOR: exec_cmd: vm set_ram PC4 192 
+Dec 03 10:41:30.086 HYPERVISOR: exec_cmd: vm set_ios PC4 /home/willian/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
+Dec 03 10:41:30.087 HYPERVISOR: exec_cmd: c3600 set_mac_addr PC4 cc06.18bc.0000 
+Dec 03 10:41:30.087 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:41:30.087 HYPERVISOR: exec_cmd: vm set_idle_pc PC4 0x606366c4 
+Dec 03 10:41:30.087 HYPERVISOR: exec_cmd: vm set_nvram PC4 256 
+Dec 03 10:41:30.088 HYPERVISOR: exec_cmd: vm set_config PC4 configs/i6_startup-config.cfg 
+Dec 03 10:41:30.827 HYPERVISOR: exec_cmd: vm set_ghost_status PC4 2 
+Dec 03 10:41:30.828 HYPERVISOR: exec_cmd: vm set_ghost_file PC4 c3660-ik9o3s-mz.124-13b.image-192.ghost 
+Dec 03 10:41:31.264 HYPERVISOR: exec_cmd: nio create_udp udp-aa110863-bd48-48b4-8ea9-5b53d540374a 10017 127.0.0.1 10015 
+Dec 03 10:41:31.265 HYPERVISOR: exec_cmd: vm slot_add_nio_binding PC4 0 0 udp-aa110863-bd48-48b4-8ea9-5b53d540374a 
+Dec 03 10:41:31.270 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:42:06.589 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:42:06.593 HYPERVISOR: exec_cmd: vm start PC4 
+Dec 03 11:10:50.735 HYPERVISOR: exec_cmd: vm extract_config PC4 

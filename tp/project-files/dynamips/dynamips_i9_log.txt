@@ -1,41 +1,34 @@
-Dec 02 16:57:27.056 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
-Dec 02 16:57:27.056 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59448.
-Dec 02 16:57:27.065 HYPERVISOR: exec_cmd: hypervisor version 
-Dec 02 16:57:27.066 HYPERVISOR: exec_cmd: hypervisor uuid 
-Dec 02 16:57:27.066 HYPERVISOR: exec_cmd: hypervisor working_dir /home/willian/GNS3/projects/ae68f188-93d1-4f38-ac6b-37e553d15fa9/project-files/dynamips 
-Dec 02 16:57:27.066 GENERAL: working_dir=/home/willian/GNS3/projects/ae68f188-93d1-4f38-ac6b-37e553d15fa9/project-files/dynamips
-Dec 02 16:57:27.067 HYPERVISOR: exec_cmd: vm create R4 5 c3600 
-Dec 02 16:57:27.067 VM: VM R4 created.
-Dec 02 16:57:27.067 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 2005 
-Dec 02 16:57:27.067 HYPERVISOR: exec_cmd: c3600 get_mac_addr R4 
-Dec 02 16:57:27.068 HYPERVISOR: exec_cmd: c3600 set_chassis R4 3660 
-Dec 02 16:57:27.068 HYPERVISOR: exec_cmd: vm set_ios R4 /home/willian/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
-Dec 02 16:57:27.069 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 16:57:27.069 HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x606366c4 
-Dec 02 16:57:27.070 HYPERVISOR: exec_cmd: vm set_nvram R4 256 
-Dec 02 16:57:27.070 HYPERVISOR: exec_cmd: vm set_ram R4 192 
-Dec 02 16:57:27.071 HYPERVISOR: exec_cmd: vm set_config R4 configs/i5_startup-config.cfg 
-Dec 02 16:57:27.072 HYPERVISOR: exec_cmd: vm set_ghost_status R4 2 
-Dec 02 16:57:27.072 HYPERVISOR: exec_cmd: vm set_ghost_file R4 c3660-ik9o3s-mz.124-13b.image-192.ghost 
-Dec 02 16:58:06.861 HYPERVISOR: exec_cmd: nio create_udp udp-2ff77543-0c92-4f92-87bb-6b71b6b996e0 10014 127.0.0.1 10015 
-Dec 02 16:58:06.869 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 0 udp-2ff77543-0c92-4f92-87bb-6b71b6b996e0 
-Dec 02 16:58:06.870 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 16:59:28.134 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 16:59:28.139 HYPERVISOR: exec_cmd: vm start R4 
-Dec 02 16:59:34.247 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 16:59:34.250 HYPERVISOR: exec_cmd: vm stop R4 
-Dec 02 16:59:34.331 VM: VM R4 shutdown.
-Dec 02 17:01:02.662 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 17:01:02.666 HYPERVISOR: exec_cmd: vm start R4 
-Dec 02 17:02:44.579 HYPERVISOR: exec_cmd: vm get_status R4 
-Dec 02 17:02:44.580 HYPERVISOR: exec_cmd: vm stop R4 
-Dec 02 17:02:44.695 VM: VM R4 shutdown.
-Dec 02 17:03:01.765 HYPERVISOR: exec_cmd: vm rename R4 PC3 
-Dec 02 17:03:21.285 HYPERVISOR: exec_cmd: vm get_status PC3 
-Dec 02 17:03:21.292 HYPERVISOR: exec_cmd: vm start PC3 
-Dec 02 17:45:41.544 HYPERVISOR: exec_cmd: vm get_status PC3 
-Dec 02 17:45:41.546 HYPERVISOR: exec_cmd: vm stop PC3 
-Dec 02 17:45:41.644 VM: VM PC3 shutdown.
-Dec 02 19:20:32.911 HYPERVISOR: exec_cmd: hypervisor working_dir /home/willian/GNS3/projects/tp/project-files/dynamips 
-Dec 02 19:20:32.911 GENERAL: working_dir=/home/willian/GNS3/projects/tp/project-files/dynamips
-Dec 02 19:20:32.912 HYPERVISOR: exec_cmd: vm extract_config PC3 
+Dec 03 10:34:47.693 HYPERVISOR: Release 0.2.15-amd64/Linux (tag 2015060118)
+Dec 03 10:34:47.693 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 54707.
+Dec 03 10:34:47.705 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 03 10:34:47.706 HYPERVISOR: exec_cmd: hypervisor uuid 
+Dec 03 10:34:47.707 HYPERVISOR: exec_cmd: hypervisor working_dir /home/willian/GNS3/projects/tp/project-files/dynamips 
+Dec 03 10:34:47.707 GENERAL: working_dir=/home/willian/GNS3/projects/tp/project-files/dynamips
+Dec 03 10:34:47.708 HYPERVISOR: exec_cmd: vm create PC4 6 c3600 
+Dec 03 10:34:47.708 VM: VM PC4 created.
+Dec 03 10:34:47.709 HYPERVISOR: exec_cmd: vm set_con_tcp_port PC4 2006 
+Dec 03 10:34:47.709 HYPERVISOR: exec_cmd: c3600 get_mac_addr PC4 
+Dec 03 10:34:47.710 HYPERVISOR: exec_cmd: c3600 set_chassis PC4 3660 
+Dec 03 10:34:47.711 HYPERVISOR: exec_cmd: vm set_ram PC4 192 
+Dec 03 10:34:47.712 HYPERVISOR: exec_cmd: vm set_ios PC4 /home/willian/GNS3/images/IOS/c3660-ik9o3s-mz.124-13b.image 
+Dec 03 10:34:47.713 HYPERVISOR: exec_cmd: c3600 set_mac_addr PC4 cc06.18bc.0000 
+Dec 03 10:34:47.713 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:34:47.714 HYPERVISOR: exec_cmd: vm set_idle_pc PC4 0x606366c4 
+Dec 03 10:34:47.714 HYPERVISOR: exec_cmd: vm set_nvram PC4 256 
+Dec 03 10:34:47.715 HYPERVISOR: exec_cmd: vm set_config PC4 configs/i6_startup-config.cfg 
+Dec 03 10:34:48.995 HYPERVISOR: exec_cmd: vm set_ghost_status PC4 2 
+Dec 03 10:34:48.995 HYPERVISOR: exec_cmd: vm set_ghost_file PC4 c3660-ik9o3s-mz.124-13b.image-192.ghost 
+Dec 03 10:34:49.133 HYPERVISOR: exec_cmd: nio create_udp udp-3a3e4780-7283-4aa5-8082-398d65aa05e8 10014 127.0.0.1 10013 
+Dec 03 10:34:49.138 HYPERVISOR: exec_cmd: vm slot_add_nio_binding PC4 0 0 udp-3a3e4780-7283-4aa5-8082-398d65aa05e8 
+Dec 03 10:34:49.139 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:35:10.256 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:35:10.258 HYPERVISOR: exec_cmd: vm start PC4 
+Dec 03 10:41:28.558 HYPERVISOR: exec_cmd: vm get_status PC4 
+Dec 03 10:41:28.560 HYPERVISOR: exec_cmd: vm stop PC4 
+Dec 03 10:41:28.637 VM: VM PC4 shutdown.
+Dec 03 10:41:28.637 HYPERVISOR: exec_cmd: vm extract_config PC4 
+Dec 03 10:41:28.638 HYPERVISOR: exec_cmd: vm delete PC4 
+Dec 03 10:41:28.638 VM: VM PC4 destroyed.
+Dec 03 10:41:28.639 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 03 10:41:29.090 HYPERVISOR: Stopped.
+Dec 03 10:41:29.090 GENERAL: reset done.

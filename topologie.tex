@@ -1,0 +1,969 @@
+% Created 2015-12-03 Thu 12:20
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Willian Ver Valen Paiva , Alexander Danzer}
+\date{\today}
+\title{TP note reseaux}
+\hypersetup{
+ pdfauthor={Willian Ver Valen Paiva , Alexander Danzer},
+ pdftitle={TP note reseaux},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 24.5.1 (Org mode 8.3.2)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{ADRESSAGE}
+\label{sec:orgheadline17}
+
+\subsection{question 1 :}
+\label{sec:orgheadline1}
+
+Les adresses dont tous les bits sont égaux à 1 sont utilisés pour le broadcast
+et tous ceux qui sont égaux à 0 sont utilisés pour identifier le réseau
+
+
+
+\subsection{question 2 :}
+\label{sec:orgheadline2}
+
+Il s'agit d'un réseau de classe B
+
+
+\subsection{question 3}
+\label{sec:orgheadline3}
+
+Le marketing possède 8 sous-réseaux pour chaque département, et chacun d'entre eux
+possède 15 sous-sous réseaux pour chaque pièce ;
+la R\&D a 2 sous-réseaux, l'un qui possède 6 sous-sous réseaux pour  pour chaque équipe et l'un qui n'a pas
+de sous-sous réseau.
+Le test a 15 sous-réseaux ;
+la production n'a pas de sous-réseau.
+
+
+\subsection{question 4}
+\label{sec:orgheadline4}
+Nous avons besoin de 2 bits pour adresser les sous-réseaux, et de 14 pour adresser une
+machine sur un sous-réseau (voir la question 3 pour les détails)
+
+
+
+\begin{center}
+\begin{tabular}{rrrrrrrrlrrrrrrrr}
+a & b & c & d & e & f & g & h & . & i & j & k & l & m & n & o & p\\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & . & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{tabular}
+\end{center}
+
+Nous utilisons les bits "a" et "b" pour diviser les pôles
+
+
+
+Masque de sous-réseau= 255.255..0
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & pole \\
+\hline
+172.16.0.0 & 172.16.0.1 & 172.16.63.254 & 172.16.63.255 & Marketing \\
+\hline
+172.16.64.0 & 172.16.64.1 & 172.16.127.254 & 172.16.127.255 & R and D \\
+\hline
+172.16.128.0 & 172.16.128.1 & 172.16.191.254 & 172.16.191.255 & support \\
+\hline
+172.16.192.0 & 172.16.192.1 & 172.16.255.254 & 172.16.255.255 & production \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{question 5 , 6 \& 7}
+\label{sec:orgheadline13}
+
+Pour adresser les 8 départements, il nous faut un total de 3 bits et pour adresser
+12 bureaux, il nous faut 4 bits.
+
+
+\begin{center}
+\begin{tabular}{rrrrrrrrlrrrrrrrr}
+a & b & c & d & e & f & g & h & . & i & j & k & l & m & n & o & p\\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & . & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{tabular}
+\end{center}
+
+
+Nous utilisons les bits "c", "d" et "e" pour diviser chaque département : cela laisse
+la possibiité d'avoir 8 départements.
+
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & departments \\
+\hline
+172.16.0.0 & 172.16.0.1 & 172.16.7.254 & 172.16.7.255 & 1 \\
+\hline
+172.16.8.0 & 172.16.0.1 & 172.16.15.254 & 172.16.15.255 & 2 \\
+\hline
+172.16.16.0 & 172.16.0.1 & 172.16.23.254 & 172.16.23.255 & 3 \\
+\hline
+172.16.24.0 & 172.16.0.1 & 172.16.31.254 & 172.16.31.255 & 4 \\
+\hline
+172.16.32.0 & 172.16.0.1 & 172.16.39.254 & 172.16.39.255 & 5 \\
+\hline
+172.16.40.0 & 172.16.0.1 & 172.16.47.254 & 172.16.47.255 & 6 \\
+\hline
+172.16.48.0 & 172.16.0.1 & 172.16.55.254 & 172.16.55.255 & 7 \\
+\hline
+172.16.56.0 & 172.16.0.1 & 172.16.63.254 & 172.16.63.255 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+\begin{center}
+\begin{tabular}{rrrrrrrrlrrrrrrrr}
+a & b & c & d & e & f & g & h & . & i & j & k & l & m & n & o & p\\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & . & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{tabular}
+\end{center}
+
+
+Nous utilisons les bits "f", "g" "h" "i" pour diviser les bureaux, ce qui
+offre la possibilité de 125 machines par bureau.
+
+
+
+\subsubsection{département 1}
+\label{sec:orgheadline5}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.0.0 & 172.16.0.1 & 172.16.0.126 & 172.16.0.127 & 1 \\
+\hline
+172.16.0.128 & 172.16.0.129 & 172.16.0.254 & 172.16.0.255 & 2 \\
+\hline
+172.16.1.0 & 172.16.1.1 & 172.16.1.126 & 172.16.1.127 & 3 \\
+\hline
+172.16.1.128 & 172.16.1.129 & 172.16.1.254 & 172.16.1.255 & 4 \\
+\hline
+172.16.2.0 & 172.16.2.1 & 172.16.2.126 & 172.16.2.127 & 5 \\
+\hline
+172.16.2.128 & 172.16.2.129 & 172.16.2.254 & 172.16.2.255 & 6 \\
+\hline
+172.16.3.0 & 172.16.3.1 & 172.16.3.126 & 172.16.3.127 & 7 \\
+\hline
+172.16.3.128 & 172.16.3.129 & 172.16.3.254 & 172.16.3.255 & 8 \\
+\hline
+172.16.4.0 & 172.16.4.1 & 172.16.4.126 & 172.16.4.127 & 9 \\
+\hline
+172.16.4.128 & 172.16.4.129 & 172.16.4.254 & 172.16.4.255 & 10 \\
+\hline
+172.16.5.0 & 172.16.5.1 & 172.16.5.126 & 172.16.5.127 & 11 \\
+\hline
+172.16.5.128 & 172.16.5.129 & 172.16.5.254 & 172.16.5.255 & 12 \\
+\hline
+172.16.6.0 & 172.16.6.1 & 172.16.6.126 & 172.16.6.127 & 13 \\
+\hline
+172.16.6.128 & 172.16.6.129 & 172.16.6.254 & 172.16.6.255 & 14 \\
+\hline
+172.16.7.0 & 172.16.7.1 & 172.16.7.126 & 172.16.7.127 & 15 \\
+\hline
+172.16.7.128 & 172.16.7.129 & 172.16.7.254 & 172.16.7.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 2}
+\label{sec:orgheadline6}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.8.0 & 172.16.8.1 & 172.16.8.126 & 172.16.8.127 & 1 \\
+\hline
+172.16.8.128 & 172.16.8.129 & 172.16.8.254 & 172.16.8.255 & 2 \\
+\hline
+172.16.9.0 & 172.16.9.1 & 172.16.9.126 & 172.16.9.127 & 3 \\
+\hline
+172.16.9.128 & 172.16.9.129 & 172.16.9.254 & 172.16.9.255 & 4 \\
+\hline
+172.16.10.0 & 172.16.10.1 & 172.16.10.126 & 172.16.10.127 & 5 \\
+\hline
+172.16.10.128 & 172.16.10.129 & 172.16.10.254 & 172.16.10.255 & 6 \\
+\hline
+172.16.11.0 & 172.16.11.1 & 172.16.11.126 & 172.16.11.127 & 7 \\
+\hline
+172.16.11.128 & 172.16.11.129 & 172.16.11.254 & 172.16.11.255 & 8 \\
+\hline
+172.16.12.0 & 172.16.12.1 & 172.16.12.126 & 172.16.12.127 & 9 \\
+\hline
+172.16.12.128 & 172.16.12.129 & 172.16.12.254 & 172.16.12.255 & 10 \\
+\hline
+172.16.13.0 & 172.16.13.1 & 172.16.13.126 & 172.16.13.127 & 11 \\
+\hline
+172.16.13.128 & 172.16.13.129 & 172.16.13.254 & 172.16.13.255 & 12 \\
+\hline
+172.16.14.0 & 172.16.14.1 & 172.16.14.126 & 172.16.14.127 & 13 \\
+\hline
+172.16.14.128 & 172.16.14.129 & 172.16.14.254 & 172.16.14.255 & 14 \\
+\hline
+172.16.15.0 & 172.16.15.1 & 172.16.15.126 & 172.16.15.127 & 15 \\
+\hline
+172.16.15.128 & 172.16.15.129 & 172.16.15.254 & 172.16.15.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 3}
+\label{sec:orgheadline7}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.16.0 & 172.16.16.1 & 172.16.16.126 & 172.16.16.127 & 1 \\
+\hline
+172.16.16.128 & 172.16.16.129 & 172.16.16.254 & 172.16.16.255 & 2 \\
+\hline
+172.16.17.0 & 172.16.17.1 & 172.16.17.126 & 172.16.17.127 & 3 \\
+\hline
+172.16.17.128 & 172.16.17.129 & 172.16.17.254 & 172.16.17.255 & 4 \\
+\hline
+172.16.18.0 & 172.16.18.1 & 172.16.18.126 & 172.16.18.127 & 5 \\
+\hline
+172.16.18.128 & 172.16.18.129 & 172.16.18.254 & 172.16.18.255 & 6 \\
+\hline
+172.16.19.0 & 172.16.19.1 & 172.16.19.126 & 172.16.19.127 & 7 \\
+\hline
+172.16.19.128 & 172.16.19.129 & 172.16.19.254 & 172.16.19.255 & 8 \\
+\hline
+172.16.20.0 & 172.16.20.1 & 172.16.20.126 & 172.16.20.127 & 9 \\
+\hline
+172.16.20.128 & 172.16.20.129 & 172.16.20.254 & 172.16.20.255 & 10 \\
+\hline
+172.16.21.0 & 172.16.21.1 & 172.16.21.126 & 172.16.21.127 & 11 \\
+\hline
+172.16.21.128 & 172.16.21.129 & 172.16.21.254 & 172.16.21.255 & 12 \\
+\hline
+172.16.22.0 & 172.16.22.1 & 172.16.22.126 & 172.16.22.127 & 13 \\
+\hline
+172.16.22.128 & 172.16.22.129 & 172.16.22.254 & 172.16.22.255 & 14 \\
+\hline
+172.16.23.0 & 172.16.23.1 & 172.16.23.126 & 172.16.23.127 & 15 \\
+\hline
+172.16.23.128 & 172.16.23.129 & 172.16.23.254 & 172.16.23.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 4}
+\label{sec:orgheadline8}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.24.0 & 172.16.24.1 & 172.16.24.126 & 172.16.24.127 & 1 \\
+\hline
+172.16.24.128 & 172.16.24.129 & 172.16.24.254 & 172.16.24.255 & 2 \\
+\hline
+172.16.25.0 & 172.16.25.1 & 172.16.25.126 & 172.16.25.127 & 3 \\
+\hline
+172.16.25.128 & 172.16.25.129 & 172.16.25.254 & 172.16.25.255 & 4 \\
+\hline
+172.16.26.0 & 172.16.26.1 & 172.16.26.126 & 172.16.26.127 & 5 \\
+\hline
+172.16.26.128 & 172.16.26.129 & 172.16.26.254 & 172.16.26.255 & 6 \\
+\hline
+172.16.27.0 & 172.16.27.1 & 172.16.27.126 & 172.16.27.127 & 7 \\
+\hline
+172.16.27.128 & 172.16.27.129 & 172.16.27.254 & 172.16.27.255 & 8 \\
+\hline
+172.16.28.0 & 172.16.28.1 & 172.16.28.126 & 172.16.28.127 & 9 \\
+\hline
+172.16.28.128 & 172.16.28.129 & 172.16.28.254 & 172.16.28.255 & 10 \\
+\hline
+172.16.29.0 & 172.16.29.1 & 172.16.29.126 & 172.16.29.127 & 11 \\
+\hline
+172.16.29.128 & 172.16.29.129 & 172.16.29.254 & 172.16.29.255 & 12 \\
+\hline
+172.16.30.0 & 172.16.30.1 & 172.16.30.126 & 172.16.30.127 & 13 \\
+\hline
+172.16.30.128 & 172.16.30.129 & 172.16.30.254 & 172.16.30.255 & 14 \\
+\hline
+172.16.31.0 & 172.16.31.1 & 172.16.31.126 & 172.16.31.127 & 15 \\
+\hline
+172.16.31.128 & 172.16.31.129 & 172.16.31.254 & 172.16.31.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 5}
+\label{sec:orgheadline9}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.32.0 & 172.16.32.1 & 172.16.32.126 & 172.16.32.127 & 1 \\
+\hline
+172.16.32.128 & 172.16.32.129 & 172.16.32.254 & 172.16.32.255 & 2 \\
+\hline
+172.16.33.0 & 172.16.33.1 & 172.16.33.126 & 172.16.33.127 & 3 \\
+\hline
+172.16.33.128 & 172.16.33.129 & 172.16.33.254 & 172.16.33.255 & 4 \\
+\hline
+172.16.34.0 & 172.16.34.1 & 172.16.34.126 & 172.16.34.127 & 5 \\
+\hline
+172.16.34.128 & 172.16.34.129 & 172.16.34.254 & 172.16.34.255 & 6 \\
+\hline
+172.16.35.0 & 172.16.35.1 & 172.16.35.126 & 172.16.35.127 & 7 \\
+\hline
+172.16.35.128 & 172.16.35.129 & 172.16.35.254 & 172.16.35.255 & 8 \\
+\hline
+172.16.36.0 & 172.16.36.1 & 172.16.36.126 & 172.16.36.127 & 9 \\
+\hline
+172.16.36.128 & 172.16.36.129 & 172.16.36.254 & 172.16.36.255 & 10 \\
+\hline
+172.16.37.0 & 172.16.37.1 & 172.16.37.126 & 172.16.37.127 & 11 \\
+\hline
+172.16.37.128 & 172.16.37.129 & 172.16.37.254 & 172.16.37.255 & 12 \\
+\hline
+172.16.38.0 & 172.16.38.1 & 172.16.38.126 & 172.16.38.127 & 13 \\
+\hline
+172.16.38.128 & 172.16.38.129 & 172.16.38.254 & 172.16.38.255 & 14 \\
+\hline
+172.16.39.0 & 172.16.39.1 & 172.16.39.126 & 172.16.39.127 & 15 \\
+\hline
+172.16.39.128 & 172.16.39.129 & 172.16.39.254 & 172.16.39.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 6}
+\label{sec:orgheadline10}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.40.0 & 172.16.40.1 & 172.16.40.126 & 172.16.40.127 & 1 \\
+\hline
+172.16.40.128 & 172.16.40.129 & 172.16.40.254 & 172.16.40.255 & 2 \\
+\hline
+172.16.41.0 & 172.16.41.1 & 172.16.41.126 & 172.16.41.127 & 3 \\
+\hline
+172.16.41.128 & 172.16.41.129 & 172.16.41.254 & 172.16.41.255 & 4 \\
+\hline
+172.16.42.0 & 172.16.42.1 & 172.16.42.126 & 172.16.42.127 & 5 \\
+\hline
+172.16.42.128 & 172.16.42.129 & 172.16.42.254 & 172.16.42.255 & 6 \\
+\hline
+172.16.43.0 & 172.16.43.1 & 172.16.43.126 & 172.16.43.127 & 7 \\
+\hline
+172.16.43.128 & 172.16.43.129 & 172.16.43.254 & 172.16.43.255 & 8 \\
+\hline
+172.16.44.0 & 172.16.44.1 & 172.16.44.126 & 172.16.44.127 & 9 \\
+\hline
+172.16.44.128 & 172.16.44.129 & 172.16.44.254 & 172.16.44.255 & 10 \\
+\hline
+172.16.45.0 & 172.16.45.1 & 172.16.45.126 & 172.16.45.127 & 11 \\
+\hline
+172.16.45.128 & 172.16.45.129 & 172.16.45.254 & 172.16.45.255 & 12 \\
+\hline
+172.16.46.0 & 172.16.46.1 & 172.16.46.126 & 172.16.46.127 & 13 \\
+\hline
+172.16.46.128 & 172.16.46.129 & 172.16.46.254 & 172.16.46.255 & 14 \\
+\hline
+172.16.47.0 & 172.16.47.1 & 172.16.47.126 & 172.16.47.127 & 15 \\
+\hline
+172.16.47.128 & 172.16.47.129 & 172.16.47.254 & 172.16.47.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 7}
+\label{sec:orgheadline11}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+172.16.48.0 & 172.16.48.1 & 172.16.48.126 & 172.16.48.127 & 1 \\
+\hline
+172.16.48.128 & 172.16.48.129 & 172.16.48.254 & 172.16.48.255 & 2 \\
+\hline
+172.16.49.0 & 172.16.49.1 & 172.16.49.126 & 172.16.49.127 & 3 \\
+\hline
+172.16.49.128 & 172.16.49.129 & 172.16.49.254 & 172.16.49.255 & 4 \\
+\hline
+172.16.50.0 & 172.16.50.1 & 172.16.50.126 & 172.16.50.127 & 5 \\
+\hline
+172.16.50.128 & 172.16.50.129 & 172.16.50.254 & 172.16.50.255 & 6 \\
+\hline
+172.16.51.0 & 172.16.51.1 & 172.16.51.126 & 172.16.51.127 & 7 \\
+\hline
+172.16.51.128 & 172.16.51.129 & 172.16.51.254 & 172.16.51.255 & 8 \\
+\hline
+172.16.52.0 & 172.16.52.1 & 172.16.52.126 & 172.16.52.127 & 9 \\
+\hline
+172.16.52.128 & 172.16.52.129 & 172.16.52.254 & 172.16.52.255 & 10 \\
+\hline
+172.16.53.0 & 172.16.53.1 & 172.16.53.126 & 172.16.53.127 & 11 \\
+\hline
+172.16.53.128 & 172.16.53.129 & 172.16.53.254 & 172.16.53.255 & 12 \\
+\hline
+172.16.54.0 & 172.16.54.1 & 172.16.54.126 & 172.16.54.127 & 13 \\
+\hline
+172.16.54.128 & 172.16.54.129 & 172.16.54.254 & 172.16.54.255 & 14 \\
+\hline
+172.16.55.0 & 172.16.55.1 & 172.16.55.126 & 172.16.55.127 & 15 \\
+\hline
+172.16.55.128 & 172.16.55.129 & 172.16.55.254 & 172.16.55.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{département 8}
+\label{sec:orgheadline12}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & rooms \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{question  8, 9, 10 R\&D}
+\label{sec:orgheadline14}
+
+
+\begin{center}
+\begin{tabular}{rrrrrrrrlrrrrrrrr}
+a & b & c & d & e & f & g & h & . & i & j & k & l & m & n & o & p\\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & . & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{tabular}
+\end{center}
+
+Nous utilisons le bit "c" pour sub-diviser le réseau en deux (recherche,
+espace de travail)
+
+
+Tout d'abord nous effectuons la division pour la recherche et l'espace de travail
+partagé.
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & departments \\
+\hline
+172.16.64.0 & 172.16.64.1 & 172.16.95.254 & 172.16.96.255 & research \\
+\hline
+172.16.96.0 & 172.16.96.1 & 172.16.127.254 & 172.16.127.255 & shared workspace \\
+\hline
+\end{tabular}
+\end{center}
+
+La division d'équipe :
+
+
+Nous utilisons les bits "d", "e", et "f" pour sub-diviser
+les équipes de recherche
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & teams \\
+\hline
+172.16.64.0 & 172.16.64.1 & 172.16.67.254 & 172.16.67.255 & 1 \\
+\hline
+172.16.68.0 & 172.16.68.1 & 172.16.71.254 & 172.16.71.255 & 2 \\
+\hline
+172.16.72.0 & 172.16.72.1 & 172.16.75.254 & 172.16.75.255 & 3 \\
+\hline
+172.16.76.0 & 172.16.76.1 & 172.16.79.254 & 172.16.79.255 & 4 \\
+\hline
+172.16.80.0 & 172.16.80.1 & 172.16.83.254 & 172.16.83.255 & 5 \\
+\hline
+172.16.84.0 & 172.16.84.1 & 172.16.87.254 & 172.16.87.255 & 6 \\
+\hline
+172.16.88.0 & 172.16.88.1 & 172.16.91.254 & 172.16.91.255 & 7 \\
+\hline
+172.16.92.0 & 172.16.92.1 & 172.16.95.254 & 172.16.95.255 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+Et pour l'espace de travail, nous n'avons pas besoin de sub-division.
+
+
+
+\subsection{question 8 , 9 , 10 Pole Test}
+\label{sec:orgheadline15}
+
+
+\begin{center}
+\begin{tabular}{rrrrrrrrlrrrrrrrr}
+a & b & c & d & e & f & g & h & . & i & j & k & l & m & n & o & p\\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & . & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+\end{tabular}
+\end{center}
+
+Pour le pole test, nous utilisons les bits "c", "d", "e" et "f" pour sub-diviser
+le réseau :
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & team \\
+\hline
+172.16.128.0 & 172.16.128.1 & 172.16.131.254 & 172.16.131.255 & 1 \\
+\hline
+172.16.132.0 & 172.16.132.1 & 172.16.135.254 & 172.16.135.255 & 2 \\
+\hline
+172.16.136.0 & 172.16.136.1 & 172.16.139.254 & 172.16.139.255 & 3 \\
+\hline
+172.16.140.0 & 172.16.140.1 & 172.16.143.254 & 172.16.143.255 & 4 \\
+\hline
+172.16.144.0 & 172.16.144.1 & 172.16.147.254 & 172.16.147.255 & 5 \\
+\hline
+172.16.148.0 & 172.16.148.1 & 172.16.151.254 & 172.16.151.255 & 6 \\
+\hline
+172.16.152.0 & 172.16.152.1 & 172.16.155.254 & 172.16.155.255 & 7 \\
+\hline
+172.16.156.0 & 172.16.156.1 & 172.16.159.254 & 172.16.159.255 & 8 \\
+\hline
+172.16.160.0 & 172.16.160.1 & 172.16.163.254 & 172.16.163.255 & 9 \\
+\hline
+172.16.164.0 & 172.16.164.1 & 172.16.167.254 & 172.16.167.255 & 10 \\
+\hline
+172.16.168.0 & 172.16.168.1 & 172.16.171.254 & 172.16.171.255 & 11 \\
+\hline
+172.16.172.0 & 172.16.172.1 & 172.16.175.254 & 172.16.175.255 & 12 \\
+\hline
+172.16.176.0 & 172.16.176.1 & 172.16.179.254 & 172.16.179.255 & 13 \\
+\hline
+172.16.180.0 & 172.16.180.1 & 172.16.183.254 & 172.16.183.255 & 14 \\
+\hline
+172.16.184.0 & 172.16.184.1 & 172.16.187.254 & 172.16.187.255 & 15 \\
+\hline
+172.16.188.0 & 172.16.188.1 & 172.16.191.254 & 172.16.191.255 & 16 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{question 8 , 9 , 10 pole production}
+\label{sec:orgheadline16}
+
+Pour la production, nous n'avons aucune sub-division, et donc la gamme des
+IP est comme suit :
+
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+network & from & to & broadcast \\
+\hline
+172.16.192.0 & 172.16.192.1 & 172.16.255.254 & 172.16.255.255 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{implementation}
+\label{sec:orgheadline46}
+
+\subsection{question 1}
+\label{sec:orgheadline18}
+for a start we prefer to use vlan to interconnect all teams as the cost of a router for each sub netwrok would be high
+
+\subsection{question 3}
+\label{sec:orgheadline19}
+
+Un LAN virtuel (VLAN) rend abstraite l'idée de LAN ; un VLAN pourrait comprendre un sous-ensemble des ports sur un swith unique ou des sous-ensembles
+de ports sur des switches multiples. Par défaut, les systèmes sur un VLAN ne voient pas le trafic associé avec les systèmes sur d'autres VLANs dans le
+même réseau.
+Les VLAN permettent le regroupement logique de stations finales qui sont physiquement dispersées sur le réseau.
+
+
+
+Lorsque les utilisateurs d'un VLAN déménagent dans un autre local physique, mais continuent à effectuer les mêmes fonctions dans leur travail, les stations
+finales de ces utilisateurs n'ont pas besoind d'être reconfigurées. De même, si les utilisateurs changent de fonction, ils n'ont pas besoin de déménager
+physiquement : changer l'affectation des stations physiques terminales du VLAN à celles de la nouvelle équipe rend accessible les ressources
+locales pour la nouvelle équipe.
+Les VLANs permettent d'éviter de déployer des routeurs pour contenir le trafic de broadcast.
+
+Le flux de paquets est limité aux ports switch qui appartiennent à un VLAN.
+Le confinement de domaines de broadcast à un réseau réduit significativement le trafic.
+
+
+
+
+Arguments pour :
+\begin{itemize}
+\item flexibilité
+\item facilité de gestion
+\item indépendance de la couche physique
+\item performance
+\item sécurité
+\item coût
+\end{itemize}
+
+Arguments contre :
+\begin{itemize}
+\item limite de 4094
+\item complication managériale
+\end{itemize}
+
+
+\subsection{question 4}
+\label{sec:orgheadline20}
+
+\subsection{question 5}
+\label{sec:orgheadline21}
+
+Les VLANs sont plus adaptés lorsqu'il s'agit d'isoler chaque équipe.
+
+
+
+\subsection{question 6}
+\label{sec:orgheadline22}
+
+\begin{verbatim}
+vlan database
+vlan 10 name E1
+vlan 20 name E2
+vlan 30 name E3
+vlan 40 name E4
+\end{verbatim}
+\subsection{question 7}
+\label{sec:orgheadline23}
+
+\begin{verbatim}
+configure
+inteface fastEthernet 1/1
+switchport access vlan 10
+switchport mode access
+no shutdown
+exit
+
+inteface fastEthernet 1/2
+switchport access vlan 20
+switchport mode access
+no shutdown
+exit
+
+inteface fastEthernet 1/3
+switchport access vlan 30
+switchport mode access
+no shutdown
+exit
+
+inteface fastEthernet 1/4
+switchport access vlan 40
+switchport mode access
+no shutdown
+exit
+\end{verbatim}
+
+\subsection{question 8}
+\label{sec:orgheadline24}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+network & from & to & broadcast & team \\
+\hline
+172.16.128.0 & 172.16.128.1 & 172.16.131.254 & 172.16.131.255 & 1 \\
+\hline
+172.16.132.0 & 172.16.132.1 & 172.16.135.254 & 172.16.135.255 & 2 \\
+\hline
+172.16.136.0 & 172.16.136.1 & 172.16.139.254 & 172.16.139.255 & 3 \\
+\hline
+172.16.140.0 & 172.16.140.1 & 172.16.143.254 & 172.16.143.255 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{question 9}
+\label{sec:orgheadline25}
+
+J'ai essayé de configurer un IP mais j'ai eu le message d'erreur:
+IP addresses may not be configured on L2 links.
+
+its switch not a router
+
+\subsection{question 10}
+\label{sec:orgheadline26}
+for all the pole test we need 16 ports as we are working with just 4 equipes we need 4
+
+\subsection{question 11}
+\label{sec:orgheadline27}
+
+\begin{verbatim}
+configure
+interface fastEthernet 1/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+exit
+\end{verbatim}
+
+
+
+\subsection{question 12}
+\label{sec:orgheadline28}
+
+\begin{verbatim}
+configurer
+interface fastEthernet 0/0
+interface fastEthernet 0/0.10
+encapsulation dot1q 10
+exit
+
+interface fastEthernet 0/0.20
+encapsulation dot1q 20
+exit
+
+interface fastEthernet 0/0.30
+encapsulation dot1q 30
+exit
+
+
+interface fastEthernet 0/0.40
+encapsulation dot1q 40
+exit
+\end{verbatim}
+
+
+
+\subsection{question 13}
+\label{sec:orgheadline29}
+
+
+
+\subsection{question 14}
+\label{sec:orgheadline30}
+
+\begin{verbatim}
+configurer
+interface fastethernet 0/0.10
+ip address 172.16.128.1 255.255.252.0
+no shutdown
+exit
+
+interface fastethernet 0/0.20
+ip address 172.16.132.1 255.255.252.0
+no shutdown
+exit
+
+interface fastethernet 0/0.30
+ip address 172.16.136.1 255.255.252.0
+no shutdown
+exit
+
+interface fastethernet 0/0.40
+ip address 172.16.140.1 255.255.252.0
+no shutdown
+exit
+\end{verbatim}
+
+\subsection{question 15}
+\label{sec:orgheadline35}
+
+\subsubsection{pc1}
+\label{sec:orgheadline31}
+
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip adress 172.16.128.2 255.255.252.0
+no shutdown
+ping 172.16.128.1
+Sending 5, 100-byte ICMP Echos to 172.16.128.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 64/65/68 ms
+\end{verbatim}
+
+
+\subsubsection{pc2}
+\label{sec:orgheadline32}
+
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip adress 172.16.132.2 255.255.252.0
+no shutdown
+ping 172.16.132.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.132.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 64/65/68 ms
+\end{verbatim}
+
+\subsubsection{pc3}
+\label{sec:orgheadline33}
+
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip adress 172.16.136.2 255.255.252.0
+no shutdown
+ping 172.16.136.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.136.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 64/65/68 ms
+\end{verbatim}
+
+
+
+\subsubsection{pc4}
+\label{sec:orgheadline34}
+
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip adress 172.16.140.2 255.255.252.0
+no shutdown
+ping 172.16.140.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 172.16.140.1, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 64/65/68 ms
+\end{verbatim}
+
+
+\subsection{question 16}
+\label{sec:orgheadline36}
+\subsection{question 17}
+\label{sec:orgheadline37}
+on the package there is a champ called id where is possible to find the vlan id ;
+
+\subsection{question 18}
+\label{sec:orgheadline38}
+the id is allocated in 12 bits giving a total of 4095
+
+
+\subsection{question 19}
+\label{sec:orgheadline44}
+\subsubsection{on the switch V1:}
+\label{sec:orgheadline39}
+\begin{verbatim}
+vlan database
+vlan 50 name E5
+vlan 60 name E6
+exit
+configure
+interface fastEthernet 1/5
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+exit
+\end{verbatim}
+
+\subsubsection{on the switch v2}
+\label{sec:orgheadline40}
+\begin{verbatim}
+configure
+inteface fastEthernet 1/1
+switchport access vlan 50
+switchport mode access
+no shutdown
+exit
+
+inteface fastEthernet 1/2
+switchport access vlan 50
+switchport mode access
+no shutdown
+exit
+
+interface fastEthernet 1/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+no shutdown
+exit
+\end{verbatim}
+
+
+\subsubsection{on the router RT :}
+\label{sec:orgheadline41}
+\begin{verbatim}
+configurer
+interface fastethernet 0/0.50
+ip address 172.16.144.1 255.255.252.0
+no shutdown
+exit
+interface fastethernet 0/0.60
+ip address 172.16.148.1 255.255.252.0
+no shutdown
+exit
+\end{verbatim}
+
+
+\subsubsection{om pc 5:}
+\label{sec:orgheadline42}
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip address 172.16.144.2 255.255.252.0
+no shutdown
+exit
+\end{verbatim}
+
+
+\subsubsection{om pc 6:}
+\label{sec:orgheadline43}
+\begin{verbatim}
+configure
+interface fastEthernet 0/0
+ip address 172.16.148.2 255.255.252.0
+no shutdown
+exit
+\end{verbatim}
+
+
+
+\subsection{..}
+\label{sec:orgheadline45}
+.Alexander Danzer, alex@dnzr.name, 0770429883:
+\end{document}

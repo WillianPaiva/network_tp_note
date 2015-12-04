@@ -582,6 +582,7 @@ vlan 20 name E2
 vlan 30 name E3
 vlan 40 name E4
 #+END_EXAMPLE
+
 ** question 7
 
 #+BEGIN_EXAMPLE
@@ -627,12 +628,10 @@ exit
 
 ** question 9
 
-J'ai essayé de configurer un IP mais j'ai eu le message d'erreur:
-IP addresses may not be configured on L2 links.
-
-its switch not a router
+no need to config the ip as it is a switch and no a router
 
 ** question 10
+
 for all the pole test we need 16 ports as we are working with just 4 equipes we need 4
 
 ** question 11
@@ -794,7 +793,7 @@ the id is allocated in 12 bits giving a total of 4095
 
 
 ** question 19
-*** on the switch V1:
+*** V1:
 #+BEGIN_EXAMPLE
 vlan database
 vlan 50 name E5
@@ -808,7 +807,7 @@ no shutdown
 exit
 #+END_EXAMPLE
 
-*** on the switch v2
+*** v2
 #+BEGIN_EXAMPLE
 configure
 inteface fastEthernet 1/1
@@ -831,7 +830,7 @@ exit
 #+END_EXAMPLE
 
 
-*** on the router RT :
+*** RT :
 #+BEGIN_EXAMPLE
 configurer
 interface fastethernet 0/0.50
@@ -845,7 +844,7 @@ exit
 #+END_EXAMPLE
 
 
-*** om pc 5:
+*** PC5:
 #+BEGIN_EXAMPLE
 configure
 interface fastEthernet 0/0
@@ -855,14 +854,13 @@ exit
 #+END_EXAMPLE
 
 
-*** om pc 6:
+*** PC6:
 #+BEGIN_EXAMPLE
 configure
 interface fastEthernet 0/0
 ip address 172.16.148.2 255.255.252.0
 no shutdown
 exit
-
 #+END_EXAMPLE
 
 
@@ -873,6 +871,7 @@ mais ça ne pas nécessaire a notre réseau.
 
 
 
-** ..
-.Alexander Danzer, alex@dnzr.name, 0770429883:
-
+** Observation
+wasn't possible to put the config files in annexe
+as the GNS3 wasn't sasving the configs , and saving just the layouts so all commands
+donne was lost once GNS3 was closed.
